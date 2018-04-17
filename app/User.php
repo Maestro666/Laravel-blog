@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email',
     ];
 
     /**
@@ -44,7 +45,6 @@ class User extends Authenticatable
     {
         $user = new static;
         $user->fill($fields);
-        $user->password = bcrypt($fields['password']);
         $user->save();
 
         return $user;
@@ -53,33 +53,52 @@ class User extends Authenticatable
     public function edit($fields)
     {
         $this->fill($fields);
-        $this->password = bcrypt($fields['password']);
+
         $this->save();
+    }
+
+    public function generatePassword($password)
+    {
+        if ($password != null)
+        {
+            $this->password = bcrypt($password);
+            $this->save();
+        }
     }
 
     public function remove()
     {
+        $this->removeAvatar();
         $this->delete();
     }
 
     public function uploadAvatar($image)
     {
-        if($image == null){ return; }
-        Storage::delete('uploads/' . $this->$image)
-        $filename = str_random(10). '.' .$image->extension();
-        $image->saveAs('uploads', $filename);
-        $this->image = $filename;
+        if($image == null) { return; }
+
+        $this->removeAvatar();
+
+        $filename = str_random(10) . '.' . $image->extension();
+        $image->storeAs('uploads', $filename);
+        $this->avatar = $filename;
         $this->save();
     }
 
-    public function getAvatar()
+    public function removeAvatar()
     {
-        if($this->image == null)
+        if ($this->avatar != null) {
+            Storage::delete('uploads/' . $this->avatar);
+        }
+    }
+
+    public function getImage()
+    {
+        if($this->avatar == null)
         {
-            return '/img/no-user-image.png';
+            return '/img/no-image.png';
         }
 
-        return '/uploads' . $this->image;
+        return '/uploads/' . $this->avatar;
     }
 
     public function makeAdmin()
@@ -96,8 +115,7 @@ class User extends Authenticatable
 
     public function toggleAdmin($value)
     {
-        if($value == null) 
-        {
+        if ($value == null) {
             return $this->makeNormal();
         }
 
@@ -118,8 +136,7 @@ class User extends Authenticatable
 
     public function toggleBan($value)
     {
-        if($value == null) 
-        {
+        if ($value == null) {
             return $this->unban();
         }
 
