@@ -22,19 +22,19 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Листинг сущности</h3>
+              <h3 class="box-title">List of entity</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group">
-                <a href="{{route('tags.create')}}" class="btn btn-success">Добавить</a>
+                <a href="{{route('tags.create')}}" class="btn btn-success">Add</a>
               </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Название</th>
-                  <th>Действия</th>
+                  <th>Name</th>
+                  <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>

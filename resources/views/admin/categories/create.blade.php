@@ -6,8 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Добавить категорию
-        <small>приятные слова..</small>
+        Add category
+        <small></small>
       </h1>
     </section>
 
@@ -18,21 +18,21 @@
       <div class="box">
       {!! Form::open(['route' => 'categories.store']) !!}
         <div class="box-header with-border">
-          <h3 class="box-title">Добавляем категорию</h3>
+          <h3 class="box-title">Adding category</h3>
           @include('admin.errors')
         </div>
         <div class="box-body">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="exampleInputEmail1">Название</label>
+              <label for="exampleInputEmail1">Name</label>
               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
             </div>
         </div>
       </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-default">Назад</button>
-          <button class="btn btn-success pull-right">Добавить</button>
+          <button class="btn btn-default">Back</button>
+          <button class="btn btn-success pull-right">Add</button>
         </div>
         <!-- /.box-footer-->
         {!! Form::close() !!}

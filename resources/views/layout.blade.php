@@ -45,8 +45,6 @@
 
                 <ul class="nav navbar-nav text-uppercase">
                     <li><a href="/">Homepage</a></li>
-                    <li><a href="about-me.html">ABOUT ME </a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav text-uppercase pull-right">
@@ -141,7 +139,7 @@
 
                         <p> Phone: +123 456 78900</p>
 
-                        <p>rahim@marlindev.ru</p>
+                        <p>andrewmaestro1991@gmail.com</p>
                     </div>
                 </aside>
             </div>

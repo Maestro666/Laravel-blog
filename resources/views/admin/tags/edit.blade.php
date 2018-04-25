@@ -6,8 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Изменить тег
-        <small>приятные слова..</small>
+        Edit tag
+        <small></small>
       </h1>
     </section>
 
@@ -17,21 +17,21 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Меняем тег</h3>
+          <h3 class="box-title">Changing tag</h3>
           @include('admin.errors')
         </div>
         <div class="box-body">
         {{Form::open(['route'=>['tags.update',$tag->id], 'method'=>'put'])}}
           <div class="col-md-6">
             <div class="form-group">
-              <label for="exampleInputEmail1">Название</label>
+              <label for="exampleInputEmail1">Name</label>
               <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="" value="{{$tag->title}}">
             </div>
         </div>
       </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-warning pull-right">Изменить</button>
+          <button class="btn btn-warning pull-right">Edit</button>
         </div>
         <!-- /.box-footer-->
         {{Form::close()}}

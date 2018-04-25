@@ -19,7 +19,7 @@ class SubsController extends Controller
         
     	\Mail::to($subs)->send(new SubscribeEmail($subs));
 
-    	return redirect()->back()->with('status','Проверьте вашу почту!');
+    	return redirect()->back()->with('status','Check your e-mail!');
     }
 
     public function verify($token)
@@ -27,6 +27,6 @@ class SubsController extends Controller
     	$subs = Subscription::where('token', $token)->firstOrFail();
     	$subs->token = null;
     	$subs->save();
-    	return redirect('/')->with('status', 'Ваша почта подтверждена!СПАСИБО!');
+    	return redirect('/')->with('status', 'our e-mail is verified! Thanks!');
     }
 }

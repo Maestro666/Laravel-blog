@@ -6,8 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Добавить статью
-        <small>приятные слова..</small>
+        Add an article
+        <small></small>
       </h1>
     </section>
 
@@ -20,24 +20,24 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Добавляем статью</h3>
+          <h3 class="box-title">Adding article</h3>
           @include('admin.errors')
         </div>
         <div class="box-body">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="exampleInputEmail1">Название</label>
+              <label for="exampleInputEmail1">Name</label>
               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title" value="{{old('title')}}">
             </div>
             
             <div class="form-group">
-              <label for="exampleInputFile">Лицевая картинка</label>
+              <label for="exampleInputFile">Faceplate</label>
               <input type="file" id="exampleInputFile" name="image">
 
-              <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+              <p class="help-block">Some notification about format</p>
             </div>
             <div class="form-group">
-              <label>Категория</label>
+              <label>Category</label>
               {{Form::select('category_id', 
               	$categories, 
               	null, 
@@ -45,7 +45,7 @@
               }}
             </div>
             <div class="form-group">
-              <label>Теги</label>
+              <label>Tags</label>
               {{Form::select('tags[]', 
               	$tags, 
               	null, 
@@ -54,7 +54,7 @@
             </div>
             <!-- Date -->
             <div class="form-group">
-              <label>Дата:</label>
+              <label>Date:</label>
 
               <div class="input-group date">
                 <div class="input-group-addon">
@@ -71,7 +71,7 @@
                 <input type="checkbox" class="minimal" name="is_featured">
               </label>
               <label>
-                Рекомендовать
+                Recommend
               </label>
             </div>
 
@@ -81,27 +81,27 @@
                 <input type="checkbox" class="minimal" name="status">
               </label>
               <label>
-                Черновик
+                Draft
               </label>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="exampleInputEmail1">Описание</label>
+              <label for="exampleInputEmail1">Description</label>
               <textarea name="description" id="" cols="30" rows="10" class="form-control" >{{old('description')}}</textarea>
           </div>
         </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="exampleInputEmail1">Полный текст</label>
+              <label for="exampleInputEmail1">Full text</label>
               <textarea name="content" id="" cols="30" rows="10" class="form-control" ></textarea>
           </div>
         </div>
       </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-default">Назад</button>
-          <button class="btn btn-success pull-right">Добавить</button>
+          <button class="btn btn-default">Back</button>
+          <button class="btn btn-success pull-right">Add</button>
         </div>
         <!-- /.box-footer-->
       </div>

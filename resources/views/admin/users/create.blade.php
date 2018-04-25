@@ -6,8 +6,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Добавить пользователя
-        <small>приятные слова..</small>
+        Add user
+        <small></small>
       </h1>
     </section>
 
@@ -17,13 +17,13 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Добавляем пользователя</h3>
+          <h3 class="box-title">Adding user</h3>
           @include('admin.errors')
         </div>
         <div class="box-body">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="exampleInputEmail1">Имя</label>
+              <label for="exampleInputEmail1">Name</label>
               <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="" value="{{old('name')}}">
             </div>
             <div class="form-group">
@@ -31,20 +31,20 @@
               <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="" value="{{old('email')}}">
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Пароль</label>
+              <label for="exampleInputEmail1">Password</label>
               <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="">
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">Аватар</label>
+              <label for="exampleInputFile">Avatar</label>
               <input type="file" name="avatar" id="exampleInputFile">
 
-              <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+              <p class="help-block">Some notification about formats</p>
             </div>
         </div>
       </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-success pull-right">Добавить</button>
+          <button class="btn btn-success pull-right">Add</button>
         </div>
         <!-- /.box-footer-->
       </div>

@@ -178,14 +178,14 @@ class Post extends Model
     {
         return ($this->category != null)
             ?   $this->category->title
-            :   'Нет категории';
+            :   'No category';
     }
 
     public function getTagsTitles()
     {
         return (!$this->tags->isEmpty())
             ?   implode(', ', $this->tags->pluck('title')->all())
-            : 'Нет тегов';
+            : 'No tags';
     }
 
     public function getCategoryID()
