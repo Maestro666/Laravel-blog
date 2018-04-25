@@ -22,3 +22,32 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'content' => $faker->sentence,
+        'image' => 'photo2.png',
+        'date' => '18/04/18',
+        'views' => $faker->numberBetween(0,1000),
+        'category_id' => 1,
+        'user_id' => 7,
+        'status' => 1,
+        'is_featured' =>0
+
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->word,
+    ];
+});
+
+//factory(App\Post::class, 5)->create()
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->word,
+    ];
+});

@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\Storage;
+use \Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -52,14 +52,14 @@ class User extends Authenticatable
 
     public function edit($fields)
     {
-        $this->fill($fields);
+        $this->fill($fields); //name,email
 
         $this->save();
     }
 
     public function generatePassword($password)
     {
-        if ($password != null)
+        if($password != null)
         {
             $this->password = bcrypt($password);
             $this->save();
@@ -86,7 +86,8 @@ class User extends Authenticatable
 
     public function removeAvatar()
     {
-        if ($this->avatar != null) {
+        if($this->avatar != null)
+        {
             Storage::delete('uploads/' . $this->avatar);
         }
     }
@@ -115,7 +116,8 @@ class User extends Authenticatable
 
     public function toggleAdmin($value)
     {
-        if ($value == null) {
+        if($value == null)
+        {
             return $this->makeNormal();
         }
 
@@ -136,12 +138,12 @@ class User extends Authenticatable
 
     public function toggleBan($value)
     {
-        if ($value == null) {
+        if($value == null)
+        {
             return $this->unban();
         }
 
         return $this->ban();
     }
-
 
 }

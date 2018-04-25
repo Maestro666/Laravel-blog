@@ -7,21 +7,21 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Tag extends Model
 {
-	use Sluggable;
+    use Sluggable;
 
     protected $fillable = ['title'];
 
     public function posts()
     {
-    	return $this->belongsToMany(
-    		Post::class,
-    		'post_tags',
-    		'tag_id',
-    		'post_id'
-    	);
+        return $this->belongsToMany(
+            Post::class,
+            'post_tags',
+            'tag_id',
+            'post_id'
+        );
     }
 
-     public function sluggable()
+    public function sluggable()
     {
         return [
             'slug' => [
